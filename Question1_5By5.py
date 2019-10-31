@@ -4,7 +4,7 @@
 def check_row_of_current_Element(grids,row,col):
     ele=grids[row][col]
     temp=grids[row][col+1:5]
-    print(temp,'   ',end=" ")
+    #print(temp,'   ',end=" ")
     if ele in temp:
         return 1
 
@@ -19,7 +19,7 @@ def check_col_of_current_Element(grids,row,col):
     ele=grids[row][col]
     for a in range(row+1,5):
         temp.append(grids[a][col])
-    print(temp)
+    #print(temp)
     if ele in temp:
         return 1
     return 0
