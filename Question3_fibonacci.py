@@ -1,24 +1,19 @@
 number=int(input("no of terms in the series (0 is not valid) = "))
 
-if number==1:
-    print("\n\n the fibonacci series is : ",end=" ")
-    print(0)
+def fibonacci(number):
+    if number<=1:
+        return number
+    else:
+        return fibonacci(number-2)+fibonacci(number-1)
 
 
-elif number>=2:
-    num1=0
-    num2=1
-    print("\n\n the fibonacci series is : ",end=" ")
-    print(num1,num2,end=" ")
-    number=number-2
-    while(number>0):
-        temp=num2
-        num2=num2+num1
-        num1=temp
-        number=number-1
-        print(num2,end=" ")
-
+if number<0:
+    print(invalid)
 
 else:
-    print("Enter a valid number")
+    for i in range(0,number):
+        result=fibonacci(i)
+        print(result,end=" ")
+
+
 

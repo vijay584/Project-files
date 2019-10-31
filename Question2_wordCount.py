@@ -4,25 +4,42 @@
 #fptr.close()
 
 
+'''function which accepts a filename reads its entire content.
+It then finds the count of words in the file'''
+
+
+def wordCount(filename):
+    fptr=open(filename,"r")
+
+    text=fptr.read()
+    print(text)
+
+    textList=text.split()
+    print(textList)
+
+    wordDict={}
+
+    for i in textList:
+        if i in wordDict:
+            wordDict[i]=wordDict[i]+1
+        else:
+            wordDict[i]=1
+
+    fptr.close()
+    return wordDict
+    
 
 
 
 
-fptr=open("abc.txt","r")
 
-text=fptr.read()
-print(text)
+filename="abc" #to use another file change this name
 
-textList=text.split()
-print(textList)
+filename=filename+".txt"
 
-wordDict={}
+#function call
+wordDict=wordCount(filename)
 
-for i in textList:
-    if i in wordDict:
-        wordDict[i]=wordDict[i]+1
-    else:
-        wordDict[i]=1
 
 
 print("WORD COUNT")
@@ -31,4 +48,4 @@ for i in wordDict:
     print(i,' : ',wordDict[i])
 
 
-fptr.close()
+
